@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class main extends UserMainCode{
+public static void main(String args[]) {
+UserMainCode m= new main();
+Scanner s =new Scanner(System.in);
+System.out.println("enter the date");
+String date=s.nextLine();
+getLastDayOfMonth(date);
+}  }
+class UserMainCode {
+static int getLastDayOfMonth(String string) {
+   String array[]=string.split("-");
+    int days=0;
+    int month=Integer.parseInt(array[1]);
+    int year=Integer.parseInt(array[2]);
+if(month == 01 || month == 03 || month == 05 || month == 07 || month == 8 || month == 10|| month == 12)
+ days=31;
+else if((month == 02) && ((year%400==0) || (year%4==0 && year%100!=0)))
+days=29;
+else if(month == 02)
+days=28;
+else
+days=30;
+System.out.print(days);
+return days;
+} }
